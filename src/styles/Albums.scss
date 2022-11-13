@@ -1,0 +1,29 @@
+.general-albums {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px;
+  background-color: black;
+}
+
+.container-album {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 6px;
+}
+
+p {
+  padding: 3px;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.img-albums {
+  width: 30vh;
+}
