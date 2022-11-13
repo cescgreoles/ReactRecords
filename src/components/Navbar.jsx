@@ -9,28 +9,28 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
-          to="artists"
+          to="/artists"
           activeclassname={"active"}
           className="navbar-list-item"
         >
           Artists
         </NavLink>
         <NavLink
-          to="albums"
+          to="/albums"
           activeclassname={"active"}
           className="navbar-list-item"
         >
           Albums
         </NavLink>
         <NavLink
-          to="genre"
+          to="/genre"
           activeclassname={"active"}
           className="navbar-list-item"
         >
           Genre
         </NavLink>
         <NavLink
-          to="contact"
+          to="/contact"
           activeclassname={"active"}
           className="navbar-list-item"
         >
