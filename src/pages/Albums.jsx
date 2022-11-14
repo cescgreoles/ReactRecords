@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../redux/albums/albums.functions";
 import ButtonBack from "../components/ButtonBack";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Albums = () => {
   const dispatch = useDispatch();
@@ -19,17 +20,26 @@ const Albums = () => {
 
   return (
     <div>
-      <ButtonBack />
-      <Link to="/albums/create">CREATE A ALBUM</Link>
-      <Link to="/albums/edit">EDITA ALBUM</Link>
+      <div className="top-bar">
+        <ButtonBack />
+        <button className="button-top">
+          <Link to="/albums/create">Create Album</Link>
+        </button>
 
-      <div className="search-albums">
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setQuery(e.target.value)}
-        ></input>
+        <button className="button-top">
+          <Link to="/albums/edit">Edit Album</Link>
+        </button>
+        <div className="search-albums">
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={(e) => setQuery(e.target.value)}
+          ></input>
+        </div>
       </div>
+      <section>
+        <Navbar />
+      </section>
       <div className="general-albums">
         {isLoading ? (
           <img

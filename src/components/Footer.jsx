@@ -6,9 +6,24 @@ const Footer = () => {
     <div className="footer">
       <h2>Colaboradores</h2>
       <div className="footer-links">
-        <a href="https://github.com/ricardograna/ReactRecords">Ricardo Graña</a>
-        <a href="https://github.com/imdaano/ReactRecords">Daniel Sánchez</a>
-        <a href="https://github.com/cescgreoles/ReactRecords">Cesc Greoles</a>
+        <a
+          href="https://github.com/ricardograna/ReactRecords"
+          className="link-footer"
+        >
+          Ricardo Graña
+        </a>
+        <a
+          href="https://github.com/imdaano/ReactRecords"
+          className="link-footer"
+        >
+          Daniel Sánchez
+        </a>
+        <a
+          href="https://github.com/cescgreoles/ReactRecords"
+          className="link-footer"
+        >
+          Cesc Greoles
+        </a>
       </div>
     </div>
   );

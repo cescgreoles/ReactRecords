@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
-// import { API } from "../shared/services/api";
+import { API } from "../shared/services/api";
 
 const Login = () => {
   const {
@@ -23,7 +23,7 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit(login)} className="login-form">
       <div className="div-text">
-        <p className="p-label">Registrate!</p>
+        <p className="p-label">Sign in</p>
       </div>
       <div className="div-label">
         <label>
@@ -38,7 +38,7 @@ const Login = () => {
                 message: "el email tiene que ser mas largo",
               },
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                // value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                 message: "Introduce un email con formato valido",
               },
             })}
@@ -58,13 +58,13 @@ const Login = () => {
             name="password"
             {...register("password", {
               required: "El password tiene que existir",
-              pattern:
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
+              // pattern:
+              //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
             })}
           />
         </label>
         {errors.password ? <p>El password no es correcto</p> : null}
-        <button disabled={!isValid}>Enviar</button>
+        <button>Enviar</button>
       </div>
     </form>
   );

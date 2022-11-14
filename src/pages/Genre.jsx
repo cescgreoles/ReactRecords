@@ -5,6 +5,7 @@ import { getGenres } from "../redux/genres/genres.functions";
 import "../styles/Genero.scss";
 import { generatePath, Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Genres = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,9 @@ const Genres = () => {
   return (
     <div className="container-top-genre">
       <ButtonBack />
+      <section>
+        <Navbar />
+      </section>
       <div className="container-genre">
         {isLoading ? (
           <img
@@ -39,6 +43,7 @@ const Genres = () => {
                   to={generatePath("/genre/:name", {
                     name: genre.name,
                   })}
+                  className="a-genre"
                 >
                   Ver mas
                 </Link>

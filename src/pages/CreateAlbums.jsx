@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/CreateAlbums.scss";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -15,38 +16,45 @@ const CreateAlbums = () => {
     console.log(formdata);
   };
   return (
-    <form onSubmit={handleSubmit(createAlbum)}>
-      <label>
-        Name
-        <input type="text" name="name" {...register("name")}></input>
-      </label>
+    <section className="section-create">
+      <h2>Create your best Album!</h2>
+      <form onSubmit={handleSubmit(createAlbum)} className="form-create">
+        <div>
+          <label>Name</label>
+          <input type="text" name="name" {...register("name")}></input>
+        </div>
+        <div>
+          <label>Group Name</label>
+          <input
+            type="text"
+            name="groupName"
+            {...register("groupName")}
+          ></input>
+        </div>
+        <div>
+          <label>Genre </label>
+          <input type="text" name="genre" {...register("genre")}></input>
+        </div>
+        <div>
+          <label>Year </label>
+          <input type="number" name="year" {...register("year")}></input>
+        </div>
+        <div>
+          <label>Discographic</label>
+          <input
+            type="text"
+            name="discographic"
+            {...register("discographic")}
+          ></input>
+        </div>
+        <div>
+          <label>image </label>
+          <input type="text" name="img" {...register("img")}></input>
+        </div>
 
-      <label>
-        Group Name
-        <input type="text" name="groupName" {...register("groupName")}></input>
-      </label>
-      <label>
-        Genre
-        <input type="text" name="genre" {...register("genre")}></input>
-      </label>
-      <label>
-        Year
-        <input type="number" name="year" {...register("year")}></input>
-      </label>
-      <label>
-        Discographic
-        <input
-          type="text"
-          name="discographic"
-          {...register("discographic")}
-        ></input>
-      </label>
-      <label>
-        image
-        <input type="text" name="img" {...register("img")}></input>
-      </label>
-      <button>Enviar</button>
-    </form>
+        <button>Enviar</button>
+      </form>
+    </section>
   );
 };
 

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getArtists } from "../redux/artists/artists.functions";
 import ButtonBack from "../components/ButtonBack";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ const Artists = () => {
           onChange={(e) => setQuery(e.target.value)}
         ></input>
       </div>
+      <section>
+        <Navbar />
+      </section>
       <div className="general-artists">
         {isLoading ? (
           <img
