@@ -1,10 +1,11 @@
 // import axios from "axios";
 import "../styles/Albums.scss";
-import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../redux/albums/albums.functions";
-import { Link } from "react-router-dom";
 import ButtonBack from "../components/ButtonBack";
+import Footer from "../components/Footer";
 
 const Albums = () => {
   const dispatch = useDispatch();
@@ -14,10 +15,20 @@ const Albums = () => {
     dispatch(getAlbums());
   }, [dispatch]);
 
+  const [query, setQuery] = useState("");
+
   return (
     <div>
-      <div>
-        <ButtonBack />
+      <ButtonBack />
+      <Link to="/albums/create">CREATE A ALBUM</Link>
+      <Link to="/albums/edit">EDITA ALBUM</Link>
+
+      <div className="search-albums">
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => setQuery(e.target.value)}
+        ></input>
       </div>
       <div className="general-albums">
         {isLoading ? (
@@ -26,25 +37,41 @@ const Albums = () => {
             alt="loading"
           />
         ) : !error ? (
-          albums.map((album) => {
-            return (
-              <div className="container-album" key={album.id}>
-                <img src={album.img} alt={album.name} className="img-albums" />
-                <h3>{album.name}</h3>
-                <p>{album.groupName}</p>
-                <p>{album.discographic}</p>
-                <p>{album.year}</p>
-                <p>{album.genre}</p>
-                <Link to={`/movies/${album.name}`}>Ver mas</Link>
-              </div>
-            );
-          })
+          albums
+            .filter((album) =>
+              (
+                album.name +
+                album.groupName +
+                album.discographic +
+                album.year +
+                album.genre
+              )
+                .toLowerCase()
+                .includes(query)
+            )
+            .map((album) => {
+              return (
+                <div className="container-album" key={album.id}>
+                  <img
+                    src={album.img}
+                    alt={album.name}
+                    className="img-albums"
+                  />
+                  <h3>{album.name}</h3>
+                  <p>{album.groupName}</p>
+                  <p>{album.discographic}</p>
+                  <p>{album.year}</p>
+                  <p>{album.genre}</p>
+                </div>
+              );
+            })
         ) : (
           <div>
             <h2>{error}</h2>
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

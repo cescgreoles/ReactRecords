@@ -1,4 +1,12 @@
 .container-button {
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding-top: 30px;
+  background-color: black;
+}
+
+.button {
+  width: 100px;
+  padding: 7px;
 }

@@ -1,10 +1,17 @@
 .general-albums {
   display: flex;
-  justify-content: space;
-  align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: black;
-  padding: 150px 170px;
+  padding: 40px;
+}
+
+.search-albums {
+  display: flex;
+  justify-content: center;
+  padding: 22px;
+  background-color: black;
 }
 
 .container-album {
@@ -17,7 +24,7 @@
 }
 
 p {
-  padding: 3px;
+  padding: 10px;
 }
 
 h3 {
@@ -25,5 +32,5 @@ h3 {
 }
 
 .img-albums {
-  width: 30vh;
+  width: 40vh;
 }

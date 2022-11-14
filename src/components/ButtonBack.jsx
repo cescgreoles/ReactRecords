@@ -4,9 +4,11 @@ import "../styles/ButtonBack.scss";
 const ButtonBack = () => {
   let navigate = useNavigate();
   return (
-    <>
-      <button onClick={() => navigate(-1)}>Back</button>
-    </>
+    <div className="container-button">
+      <button onClick={() => navigate(-1)} className="button">
+        Back
+      </button>
+    </div>
   );
 };
 

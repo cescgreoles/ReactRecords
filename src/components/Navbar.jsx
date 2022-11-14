@@ -29,6 +29,7 @@ const Navbar = () => {
         >
           Genre
         </NavLink>
+
         <NavLink
           to="/contact"
           activeclassname={"active"}

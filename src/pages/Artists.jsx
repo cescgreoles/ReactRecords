@@ -1,9 +1,10 @@
 // import axios from "axios";
 import "../styles/Artists.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtists } from "../redux/artists/artists.functions";
 import ButtonBack from "../components/ButtonBack";
+import Footer from "../components/Footer";
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -13,9 +14,18 @@ const Artists = () => {
     dispatch(getArtists());
   }, [dispatch]);
 
+  const [query, setQuery] = useState("");
+
   return (
     <div>
       <ButtonBack />
+      <div className="search-artists">
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => setQuery(e.target.value)}
+        ></input>
+      </div>
       <div className="general-artists">
         {isLoading ? (
           <img
@@ -23,26 +33,32 @@ const Artists = () => {
             alt="loading"
           />
         ) : !error ? (
-          artists.map((artist) => {
-            return (
-              <div className="container-artists" key={artist.id}>
-                <h3>{artist.name}</h3>
-                <div className="img-div">
-                  <img
-                    src={artist.img}
-                    alt={artist.name}
-                    className="img-artists"
-                  />
+          artists
+            .filter((artist) =>
+              (artist.name + artist.role).toLowerCase().includes(query)
+            )
+            .map((artist) => {
+              return (
+                <div className="container-artists" key={artist.id}>
+                  <div className="img-div">
+                    <img
+                      src={artist.img}
+                      alt={artist.name}
+                      className="img-artists"
+                    />
+                  </div>
+                  <h3>{artist.name}</h3>
+                  <p>{artist.role}</p>
                 </div>
-              </div>
-            );
-          })
+              );
+            })
         ) : (
           <div>
             <h2>{error}</h2>
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -16,6 +16,18 @@
   margin: 6px;
 }
 
+.search-artists {
+  display: flex;
+  justify-content: center;
+  padding: 22px;
+  background-color: black;
+}
+
+.img-div {
+  height: 190px;
+  width: 300px;
+}
+
 p {
   padding: 3px;
 }
@@ -25,5 +37,8 @@ h3 {
 }
 
 .img-artists {
-  width: 30vh;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  object-position: top;
 }
