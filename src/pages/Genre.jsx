@@ -6,6 +6,7 @@ import "../styles/Genero.scss";
 import { generatePath, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Socials from "../components/Socials";
 
 const Genres = () => {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ const Genres = () => {
           </div>
         )}
       </div>
+      <Socials />
       <Footer />
     </div>
   );

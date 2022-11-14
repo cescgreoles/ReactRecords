@@ -22,17 +22,16 @@ const Albums = () => {
     <div>
       <div className="top-bar">
         <ButtonBack />
-        <button className="button-top">
-          <Link to="/albums/create">Create Album</Link>
-        </button>
 
-        <button className="button-top">
-          <Link to="/albums/edit">Edit Album</Link>
-        </button>
+        <Link to="/albums/create" className="link-to-create">
+          Create Album
+        </Link>
+
         <div className="search-albums">
           <input
             type="text"
             placeholder="Search..."
+            className="button-search-on"
             onChange={(e) => setQuery(e.target.value)}
           ></input>
         </div>
