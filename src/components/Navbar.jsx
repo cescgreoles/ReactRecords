@@ -31,11 +31,11 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink
-          to="/contact"
+          to="/aboutus"
           activeclassname={"active"}
           className="navbar-list-item"
         >
-          Contact
+          About Us
         </NavLink>
       </nav>
     </div>

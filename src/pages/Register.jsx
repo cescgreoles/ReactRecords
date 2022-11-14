@@ -10,12 +10,13 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm();
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const registerUser = async (formdata) => {
+    console.log(formdata);
     dispatch(newUser(formdata, navigate));
   };
 
@@ -36,10 +37,6 @@ const Register = () => {
                 minLength: {
                   value: 2,
                   message: "el email tiene que ser mas largo",
-                },
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "Introduce un email con formato valido",
                 },
               })}
             />
@@ -62,13 +59,11 @@ const Register = () => {
               name="password"
               {...register("password", {
                 required: "El password tiene que existir",
-                pattern:
-                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
               })}
             />
           </label>
           {errors.password ? <p>El password no es correcto</p> : null}
-          <button disabled={!isValid}>Enviar</button>
+          <button>Enviar</button>
         </div>
       </form>
     </div>

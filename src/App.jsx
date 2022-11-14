@@ -4,9 +4,10 @@ import Home from "./pages/Home";
 import Albums from "./pages/Albums";
 import Artists from "./pages/Artists";
 import Genre from "./pages/Genre";
-import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import GenreDetail from "./pages/GenreDetail";
 import CreateAlbum from "./pages/CreateAlbums";
+import DeleteAlbums from "./pages/DeleteAlbums";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="genre" element={<Genre />}></Route>
         <Route path="genre/:name" element={<GenreDetail />}></Route>
         <Route path="albums/create" element={<CreateAlbum />}></Route>
-        <Route path="contact" element={<Contact />}></Route>
+        <Route path="aboutus" element={<AboutUs />}></Route>
+        <Route path="albums/delete/:id" element={<DeleteAlbums />}></Route>
       </Routes>
     </div>
   );

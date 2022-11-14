@@ -12,11 +12,11 @@ const Login = () => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm();
-  console.log(process.env.REACT_APP_BACK_URL);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const login = async (formdata) => {
+    console.log(formdata);
     dispatch(loginUser(formdata, navigate));
   };
 

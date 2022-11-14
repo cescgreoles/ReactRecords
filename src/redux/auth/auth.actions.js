@@ -28,7 +28,7 @@ export const logoutUser = (navigate) => async (dispatch) => {
 export const newUser = (formdata, navigate) => async (dispatch) => {
   dispatch({ type: "register_user_start" });
   try {
-    const resultado = await API.post("users/register", formdata);
+    const resultado = await API.post("users/create", formdata);
     dispatch({ type: "register_user_ok" });
     console.log(resultado);
     navigate("/login");

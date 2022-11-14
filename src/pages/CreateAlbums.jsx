@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { postAlbums } from "../redux/albums/albums.functions";
+import Footer from "../components/Footer";
+import Socials from "../components/Socials";
 
 const CreateAlbums = () => {
   const { register, handleSubmit } = useForm();
@@ -52,8 +54,10 @@ const CreateAlbums = () => {
           <input type="text" name="img" {...register("img")}></input>
         </div>
 
-        <button>Enviar</button>
+        <button className="button-send-create">Enviar</button>
       </form>
+      <Socials />
+      <Footer />
     </section>
   );
 };

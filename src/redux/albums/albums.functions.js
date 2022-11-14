@@ -24,4 +24,14 @@ export const postAlbums = (datos, navigate) => async (dispatch) => {
   }
 };
 
-export const putAlbums = () => async (dispatch) => {};
+// export const deleteAlbums = () => async (dispatch) => {
+//   dispatch({ type: "postingAlbums" });
+//   try {
+//     const result = await API.post("albums/create", datos);
+//     console.log(result);
+//     dispatch({ type: "postAlbums", payload: result.data });
+//     navigate("/albums");
+//   } catch (error) {
+//     dispatch({ type: "errorPostAlbums", payload: error.message });
+//   }
+// };
