@@ -4,7 +4,7 @@ export const getAlbums = () => async (dispatch) => {
   dispatch({ type: "gettingAlbums" });
 
   try {
-    const result = await API.get("http://localhost:3000/albums");
+    const result = await API.get("albums");
     console.log(result);
     dispatch({ type: "getAlbums", payload: result.data });
   } catch (error) {
