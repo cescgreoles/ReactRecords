@@ -1,4 +1,3 @@
-import axios from "axios";
 import "../styles/GenreDetail.scss";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -10,9 +9,7 @@ const GenreDetail = () => {
   const [genre, setGenre] = useState({});
   useEffect(() => {
     const getGenre = async () => {
-      const res = await API.get(
-        `http://localhost:3000/genres/getbyname/${name}`
-      );
+      const res = await API.get(`/genres/getbyname/${name}`);
       console.log(res.data);
       setGenre(res.data);
     };
